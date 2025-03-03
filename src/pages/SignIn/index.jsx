@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import logo from "../../assets/Eventeev whit-09 2.svg";
 import {
   Button,
   Box,
@@ -14,7 +15,8 @@ import {
   Input,
   InputGroup,
   InputRightElement,
-  Link
+  Link,
+  Image,
 } from "@chakra-ui/react";
 // import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
@@ -24,7 +26,11 @@ const SignIn = () => {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   return (
-    <Center className="bg-[url(https://res.cloudinary.com/dygn4o3nv/image/upload/v1740694422/Log-In_jwspvw.png)] h-screen bg-center bg-cover">
+    <Center
+      flexDir={"column"}
+      className="bg-[url(https://res.cloudinary.com/dygn4o3nv/image/upload/v1740694422/Log-In_jwspvw.png)] h-full bg-center bg-cover space-y-5 py-10"
+    >
+      <Image src={logo} />
       <Box
         bg={"white"}
         width={"464px"}
@@ -35,7 +41,7 @@ const SignIn = () => {
         className="space-y-4"
       >
         <Center flexDirection={"column"} textAlign={"center"}>
-          <Heading size={"lg"} fontStyle={"feather"}>
+          <Heading size={"lg"} fontStyle={"feather"} color={"#1B1818"}>
             Sign in
           </Heading>
           <Text
@@ -57,6 +63,7 @@ const SignIn = () => {
             height={"50px"}
             borderWidth={"thin"}
             borderRadius={"md"}
+            borderColor={"#D0D5DD"}
             // _hover={{bg: "#f3c8b9"}}
             cursor={"pointer"}
           >
@@ -83,7 +90,7 @@ const SignIn = () => {
           <FormControl marginY={"1.5"}>
             <FormLabel
               fontWeight={"medium"}
-              fontSize={"sm"}
+              fontSize={"small"}
               lineHeight={"20.3px"}
             >
               Email Address
@@ -99,7 +106,7 @@ const SignIn = () => {
           <FormControl marginY={"1.5"}>
             <FormLabel
               fontWeight={"medium"}
-              fontSize={"sm"}
+              fontSize={"small"}
               lineHeight={"20.3px"}
             >
               Password
@@ -131,7 +138,7 @@ const SignIn = () => {
           </FormControl>
         </Box>
         <Flex justifyContent={"space-between"} alignItems={"center"}>
-          <Checkbox>
+          <Checkbox accentColor={"#EB5017"} colorScheme={"orange"}>
             <Text fontWeight="medium" fontSize="12px" lineHeight="20.3px">
               Remember me for 30 days
             </Text>
@@ -149,6 +156,28 @@ const SignIn = () => {
         <Button variant={"custom"} width={"full"} size={"lg"} marginTop={"5"}>
           Sign in
         </Button>
+      </Box>
+      <Box
+        height={"52px"}
+        width={"266px"}
+        bg={"white"}
+        borderRadius={"30px"}
+        paddingY={"16px"}
+        paddingX={"28px"}
+      >
+        <Center gap={"1"}>
+          <Text
+            fontWeight={"normal"}
+            fontSize={"sm"}
+            lineHeight={"5"}
+            color={"#514A4A"}
+          >
+            Don't have an account?
+          </Text>
+          <Link fontWeight={"semibold"} fontSize={"sm"} lineHeight={"20.3px"} color={"#F77A4A"}>
+            Sign up
+          </Link>
+        </Center>
       </Box>
     </Center>
   );
