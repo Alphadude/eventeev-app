@@ -15,10 +15,9 @@ import {
   Input,
   InputGroup,
   InputRightElement,
-  Link,
   Image,
 } from "@chakra-ui/react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
 import { VscEye, VscEyeClosed } from "react-icons/vsc";
 
@@ -28,7 +27,7 @@ const SignIn = () => {
   return (
     <Center
       flexDir={"column"}
-      className="bg-[url(https://res.cloudinary.com/dygn4o3nv/image/upload/v1740694422/Log-In_jwspvw.png)] h-full bg-center bg-cover space-y-5 py-10"
+      className="bg-[url(https://res.cloudinary.com/dygn4o3nv/image/upload/v1740694422/Log-In_jwspvw.png)] bg-center bg-cover space-y-5 py-10"
     >
       <Image src={logo} />
       <Box
@@ -41,7 +40,12 @@ const SignIn = () => {
         className="space-y-4"
       >
         <Center flexDirection={"column"} textAlign={"center"}>
-          <Heading size={"lg"} fontStyle={"feather"} color={"#1B1818"}>
+          <Heading
+            size={"lg"}
+            fontStyle={"feather"}
+            color={"#1B1818"}
+            style={{ fontFamily: "Feather Bold" }}
+          >
             Sign in
           </Heading>
           <Text
@@ -49,7 +53,7 @@ const SignIn = () => {
             fontWeight={"normal"}
             lineHeight={"20.3px"}
             color={"#645D5D"}
-            marginTop={"4"}
+            marginTop={"2"}
           >
             Enter your credentials to access your account
           </Text>
@@ -138,19 +142,24 @@ const SignIn = () => {
           </FormControl>
         </Box>
         <Flex justifyContent={"space-between"} alignItems={"center"}>
-          <Checkbox accentColor={"#EB5017"} colorScheme={"orange"}>
+          <Checkbox
+            defaultChecked={true}
+            accentColor={"#EB5017"}
+            colorScheme={"orange"}
+          >
             <Text fontWeight="medium" fontSize="12px" lineHeight="20.3px">
               Remember me for 30 days
             </Text>
           </Checkbox>
-          <Link
-            fontWeight="medium"
-            fontSize="12px"
-            lineHeight="20.3px"
-            color="#EB5017"
-            to="/forgot-password"
-          >
-            Forgot password?
+          <Link to="/forgot-password">
+            <Text
+              fontWeight="medium"
+              fontSize="12px"
+              lineHeight="20.3px"
+              color="#EB5017"
+            >
+              Forgot password?
+            </Text>
           </Link>
         </Flex>
         <Button variant={"custom"} width={"full"} size={"lg"} marginTop={"5"}>
@@ -174,8 +183,15 @@ const SignIn = () => {
           >
             Don't have an account?
           </Text>
-          <Link fontWeight={"semibold"} fontSize={"sm"} lineHeight={"20.3px"} color={"#F77A4A"}>
-            Sign up
+          <Link to={"/sign-up"}>
+            <Text
+              fontWeight={"semibold"}
+              fontSize={"sm"}
+              lineHeight={"20.3px"}
+              color={"#F77A4A"}
+            >
+              Sign up
+            </Text>
           </Link>
         </Center>
       </Box>
